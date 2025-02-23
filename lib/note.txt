@@ -1,0 +1,6 @@
+copy: 
+UnityEngine.CoreModule.dll
+UnityEngine.dll
+Assembly-CSharp.dll
+RDTools.dll
+from Rhythm Doctor_Data\Managed
