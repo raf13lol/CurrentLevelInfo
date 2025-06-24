@@ -107,8 +107,7 @@ public class CurrentLevelInfo : BaseUnityPlugin
                 return;
             }
             // it must be external path!
-            Level_Custom custom = __instance.currentLevel as Level_Custom;
-            RDLevelSettings settings = custom.data.settings;
+            RDLevelSettings settings = __instance.currentLevel.data.settings;
 
             static string notDefined(string thing)
                 => (thing == null || thing.Length <= 0) ? "???" : thing;
