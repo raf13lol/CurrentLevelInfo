@@ -74,8 +74,7 @@ public class CurrentLevelInfo : BaseUnityPlugin
         contents = contents.Replace("\\n", "\n");
         contents = new Regex(@"<(\/)?color(=("")?([#A-Za-z0-9 ])*("")?)?>", RegexOptions.Multiline).Replace(contents, "");
 
-        // Assume absolute
-        if (filePath.Value.Contains(Path.DirectorySeparatorChar) || filePath.Value.Contains(Path.AltDirectorySeparatorChar))
+        if (Path.IsPathRooted(filePath.Value))
             File.WriteAllText(filePath.Value, contents);
         else
             File.WriteAllText(Persistence.GetSaveFileFolderPath() + Path.DirectorySeparatorChar + filePath.Value, contents);
