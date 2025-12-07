@@ -77,7 +77,7 @@ public class CurrentLevelInfo : BaseUnityPlugin
         if (Path.IsPathRooted(filePath.Value))
             File.WriteAllText(filePath.Value, contents);
         else
-            File.WriteAllText(Persistence.GetSaveFileFolderPath() + Path.DirectorySeparatorChar + filePath.Value, contents);
+            File.WriteAllText(Path.Combine(Application.dataPath.Replace("Rhythm Doctor_Data", ""), "User", filePath.Value), contents);
     }
 
     [HarmonyPatch(typeof(scnBase), "Start")]
